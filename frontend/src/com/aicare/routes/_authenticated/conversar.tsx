@@ -1,6 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import { Mic, RotateCcw, Send, Square } from "lucide-react";
 import { toast } from "sonner";
@@ -44,7 +43,7 @@ type Mensagem = {
 function Conversar() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const conversar = useServerFn(conversarComAssistente);
+  const conversar = conversarComAssistente;
 
   const { data: pacientes = [] } = useQuery({
     queryKey: ["pacientes"],
