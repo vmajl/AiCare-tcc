@@ -10,6 +10,10 @@ export default defineConfig({
     },
   },
   tanstackStart: {
+    router: {
+      routesDirectory: "src/com/aicare/routes",
+      generatedRouteTree: "src/com/aicare/routeTree.gen.ts",
+    },
     server: { entry: "server" },
   },
 });
